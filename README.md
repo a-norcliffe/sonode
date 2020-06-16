@@ -45,6 +45,9 @@ You will also need to install `PyTorch 1.4.0` from the [official website](https:
 
 ## Running the code
 
+![Silverbox](figures/silverbox_combined_compressed.gif)
+
+
 We provide a `run.sh` script for each experiment in the `experiments` folder. 
 All programs other than the MNIST experiments can be run on a cpu and typically finish within 2 hours 
 depending on the machine. 
