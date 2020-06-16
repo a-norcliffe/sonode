@@ -10,7 +10,7 @@ Official code for the paper [**On Second Order Behaviour in Augmented Neural ODE
   
   ![NODE vs ANODE vs SONODE learning a cosine](figures/quick_cos.gif)
   
- ![NODE vs ANODE vs SONODE on the nested spheres problem](figures/g_gif.gif)
+ ![NODE vs ANODE vs SONODE on the nested spheres problem](figures/nested_gif.gif)
 
 
 ## Abstract 
