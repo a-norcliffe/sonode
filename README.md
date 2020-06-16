@@ -6,16 +6,31 @@ Official code for the paper [**On Second Order Behaviour in Augmented Neural ODE
  [Ben Day](https://www.cl.cam.ac.uk/~bjd39/), 
  [Nikola Simidjievski](https://scholar.google.com/citations?user=T5l2R6IAAAAJ&hl=en),
   [Pietro Liò](https://www.cl.cam.ac.uk/~pl219/))
+  
+  ![NODE vs ANODE vs SONODE learning a cosine](figures/quick_cos_gif.gif)
+  
+ ![NODE vs ANODE vs SONODE on the nested spheres problem](figures/g_gif.gif)
 
-![Deep Graph Mapper](figures/interpretability.png)
+
+## Abstract 
+
+Neural Ordinary Differential Equations (NODEs) are a new class of models that transform data continuously through 
+infinite-depth architectures. The continuous nature of NODEs has made them particularly suitable for learning the
+dynamics of complex physical systems. While previous work has mostly been focused on first order ODEs, the dynamics of 
+many systems, especially in classical physics, are governed by second order laws. In this work, we take a closer look 
+at Second Order Neural ODEs (SONODEs). We show how the adjoint sensitivity method can be extended to SONODEs and prove 
+that an alternative first order optimisation method is computationally more efficient. Furthermore, we extend the 
+theoretical understanding of the broader class of Augmented NODEs (ANODEs) by showing they can also learn higher order 
+dynamics, but at the cost of interpretability. This indicates that the advantages of ANODEs go beyond the extra space 
+offered by the augmented dimensions, as originally thought. Finally, we compare SONODEs and ANODEs on synthetic and 
+real dynamical systems and demonstrate that the inductive biases of the former generally result in faster training 
+and better performance. 
+
+![SONODE vs ANODE(2) learning a 2D function](figures/interpretability.png)
 
 *ANODEs and SONODEs successfully learn the trajectory in real space of a 2D ODE for two different random initialisations. 
 However, the augmented trajectories of ANODE are in both cases widely different from the true velocity of the ODE. 
 In contrast, SONODE converges in both cases to the true ODE.*
-
-## Abstract 
-
-Neural Ordinary Differential Equations (NODEs) are a new class of models that transform data continuously through infinite-depth architectures. The continuous nature of NODEs has made them particularly suitable for learning the dynamics of complex physical systems. While previous work has mostly been focused on first order ODEs, the dynamics of many systems, especially in classical physics, are governed by second order laws. In this work, we take a closer look at Second Order Neural ODEs (SONODEs). We show how the adjoint sensitivity method can be extended to SONODEs and prove that an alternative first order optimisation method is computationally more efficient. Furthermore, we extend the theoretical understanding of the broader class of Augmented NODEs (ANODEs) by showing they can also learn higher order dynamics, but at the cost of interpretability. This indicates that the advantages of ANODEs go beyond the extra space offered by the augmented dimensions, as originally thought. Finally, we compare SONODEs and ANODEs on synthetic and real dynamical systems and demonstrate that the inductive biases of the former generally result in faster training and better performance. 
 
 ## Getting started
 
