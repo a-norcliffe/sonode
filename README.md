@@ -8,7 +8,7 @@ Official code for the paper [**On Second Order Behaviour in Augmented Neural ODE
  [Nikola Simidjievski](https://scholar.google.com/citations?user=T5l2R6IAAAAJ&hl=en),
   [Pietro Liò](https://www.cl.cam.ac.uk/~pl219/))
   
-  ![NODE vs ANODE vs SONODE learning a cosine](figures/quick_cos_gif.gif)
+  ![NODE vs ANODE vs SONODE learning a cosine](figures/quick_cos.gif)
   
  ![NODE vs ANODE vs SONODE on the nested spheres problem](figures/g_gif.gif)
 
