@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import time
+import os
 import argparse
 import torch
 import torch.nn as nn
@@ -124,6 +125,7 @@ def count_parameters(model):
 if __name__ == '__main__':
     device = torch.device('cuda:' + str(args.gpu) if torch.cuda.is_available() else 'cpu')
     filename = 'anode('+str(args.extra_dim)+')./'+str(args.experiment_no)+'./'
+    os.makedirs('./'+filename)
     data_dim = 1
     dim = data_dim + args.extra_dim
     #dim does not equal data_dim for ANODEs where they are augmented with extra zeros

@@ -1,4 +1,5 @@
 import time
+import os
 import matplotlib.pyplot as plt
 import argparse
 import numpy as np
@@ -85,6 +86,7 @@ if __name__ == '__main__':
     else:
         filename = 'anode('+str(args.extra_dim)+')./'
     
+    os.makedirs('./'+filename)
     data_dim = 1
     dim = data_dim + args.extra_dim
     #dim does not equal data_dim for ANODEs where they are augmented with extra zeros

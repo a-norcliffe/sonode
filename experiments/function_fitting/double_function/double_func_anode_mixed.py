@@ -1,4 +1,5 @@
 import time
+import os
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
@@ -90,6 +91,8 @@ if __name__ == '__main__':
         filename = 'results./double_func./not_mixed./'
     else:
         filename = 'results./double_func./mixed./'
+    
+    os.makedirs('./'+filename)
     dim = 1 + args.extra_dim
     
     # times

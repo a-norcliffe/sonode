@@ -1,4 +1,5 @@
 import time
+import os
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
@@ -95,6 +96,7 @@ if __name__ == '__main__':
     device = torch.device('cuda:' + str(args.gpu) if torch.cuda.is_available() else 'cpu')
     dim = 1
     filename = 'sonode./'
+    os.makedirs('./'+filename)
     
     # make data
     

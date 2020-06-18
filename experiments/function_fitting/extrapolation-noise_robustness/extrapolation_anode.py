@@ -1,4 +1,5 @@
 import time
+import os
 import matplotlib.pyplot as plt
 import argparse
 import numpy as np
@@ -81,6 +82,8 @@ def function(t):
 
 if __name__ == '__main__':
     device = torch.device('cuda:' + str(args.gpu) if torch.cuda.is_available() else 'cpu')
+    filename = 'results./'+str(args.noise)+'./experiment'+str(args.experiment_no)+'./anode('+str(args.extra_dim)+')./'
+    os.makedirs('./'+filename)
     data_dim = 1
     dim = data_dim + args.extra_dim
     #dim does not equal data_dim for ANODEs where they are augmented with extra zeros
@@ -153,7 +156,7 @@ if __name__ == '__main__':
     print('Total time = '+str(end_time-start_time))
     print('No. parameters = '+str(count_parameters(model)))
     
-    filename = 'results./'+str(args.noise)+'./experiment'+str(args.experiment_no)+'./anode('+str(args.extra_dim)+')./'
+    
     np.save(filename+'itr_arr.npy', np.asarray(itr_arr))
     np.save(filename+'nfe_arr.npy', np.asarray(nfe_arr))
     np.save(filename+'loss_arr.npy', np.asarray(loss_arr))

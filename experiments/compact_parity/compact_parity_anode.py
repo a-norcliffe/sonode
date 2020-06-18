@@ -1,4 +1,5 @@
 import time
+import os
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
@@ -79,6 +80,8 @@ if __name__ == '__main__':
         filename = 'node./'
     else:
         filename = 'anode('+str(args.extra_dim)+')./'
+    
+    os.makedirs('./'+filename)
     
    # making the data
     zeros = torch.zeros(2, args.extra_dim).float()

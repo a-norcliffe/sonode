@@ -1,4 +1,5 @@
 import time
+import os
 import argparse
 import numpy as np
 import torch
@@ -98,6 +99,7 @@ def count_parameters(model):
 if __name__ == '__main__':
     device = torch.device('cuda:' + str(args.gpu) if torch.cuda.is_available() else 'cpu')
     filename = 'sonode./'
+    os.makedirs('./'+filename)
     
     #data_dim = args.data_dimension
     dim = args.data_dimension

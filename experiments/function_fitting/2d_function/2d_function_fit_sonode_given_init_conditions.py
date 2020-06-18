@@ -1,4 +1,5 @@
 import time
+import os
 import matplotlib.pyplot as plt
 import argparse
 import numpy as np
@@ -102,6 +103,7 @@ def real_vel_y(t):
 if __name__ == '__main__':
     device = torch.device('cuda:' + str(args.gpu) if torch.cuda.is_available() else 'cpu')
     filename = 'results./sonode./given_initial_conditions./'+str(args.experiment_no)+'./'
+    os.makedirs('./'+filename)
     data_dim = 2
     dim = data_dim
     #dim does not equal data_dim for ANODEs where they are augmented with extra zeros
