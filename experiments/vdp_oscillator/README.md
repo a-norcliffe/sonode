@@ -1,4 +1,6 @@
-Folder containing the files for the Van-Der-Pol chaotic oscillator. 
+Folder containing the files for the Van-Der-Pol chaotic oscillator. We have included a 'results.npy'
+numpy file, which the programs write the train and test MSE to. However, this was not used in our
+experiments.
 
 Disclaimer: This experiment is highly dependent on initialisation. Because the ODE is dependent on 
 position and velocity, if either of those coefficients is positive, there will be exponential 
