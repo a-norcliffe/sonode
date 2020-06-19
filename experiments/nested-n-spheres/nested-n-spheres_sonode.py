@@ -108,7 +108,10 @@ def count_parameters(model):
 if __name__ == '__main__':
     device = torch.device('cuda:' + str(args.gpu) if torch.cuda.is_available() else 'cpu')
     filename = 'sonode./'
-    os.makedirs('./'+filename)
+    try:
+        os.makedirs('./'+filename)
+    except FileExistsError:
+        pass
     
     dim = args.data_dimension
     
@@ -188,7 +191,10 @@ if __name__ == '__main__':
         
     
     if args.visualise:
-        os.makedirs('./figure_data./')
+        try:
+            os.makedirs('./figure_data./')
+        except FileExistsError:
+            pass
         samp_ts = torch.linspace(t0, tN, 30)
         if args.data_dimension == 1:
             z0 = torch.tensor(np.load('data./vis_data./1d_vis_data.npy')).float().to(device)

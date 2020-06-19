@@ -92,7 +92,10 @@ if __name__ == '__main__':
     else:
         filename = 'anode('+str(args.extra_dim)+')./'
     
-    os.makedirs('./'+filename)
+    try:
+        os.makedirs('./'+filename)
+    except FileExistsError:
+        pass
     dim = args.data_dimension + args.extra_dim
     
     #Download data
@@ -177,7 +180,10 @@ if __name__ == '__main__':
     
     
     if args.visualise:
-        os.makedirs('./figure_data./')
+        try:
+            os.makedirs('./figure_data./')
+        except FileExistsError:
+            pass
         samp_ts = torch.linspace(t0, tN, 30)
         if args.data_dimension == 1:
             z0 = torch.tensor(np.load('data./vis_data./1d_vis_data.npy')).float()

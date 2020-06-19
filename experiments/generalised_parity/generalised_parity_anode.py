@@ -81,7 +81,10 @@ if __name__ == '__main__':
     else:
         filename = 'anode./'
     
-    os.makedirs('./'+filename)
+    try:
+        os.makedirs('./'+filename)
+    except FileExistsError:
+        pass
     dim = args.data_dimension + args.extra_dim
     
     z0 = np.random.rand(args.ntrain, args.data_dimension)*2 - 1

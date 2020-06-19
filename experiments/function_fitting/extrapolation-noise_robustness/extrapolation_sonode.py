@@ -103,7 +103,10 @@ def function(t):
 if __name__ == '__main__':
     device = torch.device('cuda:' + str(args.gpu) if torch.cuda.is_available() else 'cpu')
     filename = 'results./'+str(args.noise)+'./experiment'+str(args.experiment_no)+'./sonode./'
-    os.makedirs('./'+filename)
+    try:
+        os.makedirs('./'+filename)
+    except FileExistsError:
+        pass
     data_dim = 1
     dim = data_dim
     #dim does not equal data_dim for ANODEs where they are augmented with extra zeros

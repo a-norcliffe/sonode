@@ -20,7 +20,7 @@ parser.add_argument('--lr', type=float, default=0.1)
 parser.add_argument('--batch_size', type=int, default=128)
 parser.add_argument('--test_batch_size', type=int, default=1000)
 
-parser.add_argument('--save', type=str, default='./experiment_sonode_conv_v3')
+parser.add_argument('--save', type=str, default='./experiment_sonode_conv_v1')
 parser.add_argument('--gpu', type=int, default=0)
 parser.add_argument('--debug', action='store_true')
 args = parser.parse_args()

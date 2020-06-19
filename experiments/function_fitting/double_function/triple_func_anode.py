@@ -91,7 +91,10 @@ def f3(t):
 if __name__ == '__main__':
     device = torch.device('cuda:' + str(args.gpu) if torch.cuda.is_available() else 'cpu')
     filename = 'results./triple_func./'
-    os.makedirs('./'+filename)
+    try:
+        os.makedirs('./'+filename)
+    except FileExistsError:
+        pass
     dim = 1 + args.extra_dim
     
     # times

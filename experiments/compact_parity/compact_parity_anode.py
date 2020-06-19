@@ -81,7 +81,10 @@ if __name__ == '__main__':
     else:
         filename = 'anode('+str(args.extra_dim)+')./'
     
-    os.makedirs('./'+filename)
+    try:
+        os.makedirs('./'+filename)
+    except FileExistsError:
+        pass
     
    # making the data
     zeros = torch.zeros(2, args.extra_dim).float()

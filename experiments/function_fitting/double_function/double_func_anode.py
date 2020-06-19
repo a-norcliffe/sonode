@@ -92,7 +92,10 @@ if __name__ == '__main__':
     else:
         filename = 'results./double_func./mixed./'
     
-    os.makedirs('./'+filename)
+    try:
+        os.makedirs('./'+filename)
+    except FileExistsError:
+        pass
     dim = 1 + args.extra_dim
     
     # times

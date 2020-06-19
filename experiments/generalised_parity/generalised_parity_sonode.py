@@ -99,7 +99,10 @@ def count_parameters(model):
 if __name__ == '__main__':
     device = torch.device('cuda:' + str(args.gpu) if torch.cuda.is_available() else 'cpu')
     filename = 'sonode./'
-    os.makedirs('./'+filename)
+    try:
+        os.makedirs('./'+filename)
+    except FileExistsError:
+        pass
     
     #data_dim = args.data_dimension
     dim = args.data_dimension
