@@ -17,6 +17,7 @@ import torch.optim as optim
 parser = argparse.ArgumentParser()
 parser.add_argument('--tol', type=float, default=1e-3)
 parser.add_argument('--adjoint', type=eval, default=False)
+parser.add_argument('--visualise', type=eval, default=True)
 parser.add_argument('--niters', type=int, default=1000)
 parser.add_argument('--lr', type=float, default=0.01)
 parser.add_argument('--gpu', type=int, default=0)
@@ -197,4 +198,17 @@ if __name__ == '__main__':
     np.save(filename+'loss_arr.npy', loss_arr)
     np.save(filename+'time_arr.npy', time_arr)
     
+    if args.visualise:
+        model = torch.load(filename+'model.pth')
+        y0 = model[0](z0)
+        pred_z = odeint(model[1].odefunc, y0, samp_ts)
+        pred_z = pred_z.gather(1, ids)
+        to_plot_v2 = pred_z.detach().numpy().reshape(args.npoints)
+        plt.plot(samp_ts_array, v2_data, label='True V2')
+        plt.plot(samp_ts_array, to_plot_v2, label='Learnt V2')
+        plt.xlabel('t')
+        plt.ylabel('V2')
+        plt.legend(loc='upper left')
+        plt.title('SONODE Silverbox Experiment No. = ' + str(args.experiment_no))
+        plt.savefig(filename+'vis.png')
     

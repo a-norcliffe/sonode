@@ -196,6 +196,22 @@ if __name__ == '__main__':
     np.save(filename+'loss_arr.npy', loss_arr)
     np.save(filename+'time_arr.npy', time_arr)
     
+    if args.visualise:
+        model = torch.load(filename+'model.pth')
+        y0 = model[0](z0)
+        pred_z = odeint(model[1].odefunc, y0, samp_ts)
+        pred_z = pred_z.gather(1, ids)
+        to_plot_acc2 = pred_z.detach().numpy().reshape(args.npoints)
+        plt.plot(samp_ts_array, acc2_data, label='True a2')
+        plt.plot(samp_ts_array, to_plot_acc2, label='Learnt a2')
+        plt.xlabel('t')
+        plt.ylabel('a2')
+        plt.legend(loc='upper left')
+        plt.title('ANODE ('+str(args.extra_dim)+') Plane Vibrations Experiment No. = '+str(args.experiment_no))
+        plt.savefig(filename+'vis.png')
+    
+        
+    
     
     
     
