@@ -17,8 +17,8 @@ parser.add_argument('--lr', type=float, default=0.01)
 parser.add_argument('--gpu', type=int, default=0)
 parser.add_argument('--evenly_spread_timestamps', type=eval, default=True)
 parser.add_argument('--noise', type=float, default=0.0) #0.0 gives no noise
-parser.add_argument('--npoints', type=int, default=50)
-parser.add_argument('--extra_dim', type=int, default=1)
+parser.add_argument('--npoints', type=int, default=30)
+parser.add_argument('--extra_dim', type=int, default=0)
 args = parser.parse_args()
 
 if args.adjoint:
