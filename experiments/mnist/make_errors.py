@@ -1,7 +1,7 @@
 import numpy as np
 
 
-models = ['node', 'sonode_conv_v']
+models = ['node', 'sonode_conv_v', 'anode']
 experiment_numbers = ['1', '2', '3']
 array_types = ['train_acc', 'test_acc']
 
@@ -31,7 +31,7 @@ def make_moving_av(model_no, experiment_no, array_type_no):
     np.save(filename+'running_epoch_arr.npy', samp_eps_array)
 
 
-for i in range(2):
+for i in range(3):
     for j in range(3):
         for k in range(2):
             make_moving_av(i, j, k)
