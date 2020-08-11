@@ -169,4 +169,4 @@ plt.title('MNIST NFE', fontsize=22)
 
 
 plt.tight_layout()
-plt.savefig('mnist.pdf', bbox_inches='tight')
+plt.savefig('mnist.png', bbox_inches='tight')
