@@ -5,7 +5,7 @@ Official code for the paper [**On Second Order Behaviour in Augmented Neural ODE
  ([Alexander Norcliffe](https://twitter.com/alexnorcliffe98), 
  [Cristian Bodnar](https://crisbodnar.github.io/), 
  [Ben Day](https://www.cl.cam.ac.uk/~bjd39/), 
- [Nikola Simidjievski](https://scholar.google.com/citations?user=T5l2R6IAAAAJ&hl=en),
+ [Nikola Simidjievski](https://simidjievskin.github.io/),
   [Pietro Liò](https://www.cl.cam.ac.uk/~pl219/))
   
   ![NODE vs ANODE vs SONODE learning a cosine](figures/quick_cos.gif)
