@@ -55,10 +55,10 @@ depending on the machine.
 ## Citation
 For attribution in academic contexts, please cite this work as
 ```
-@article{norcliffe2020_sonode,
+@inproceedings{norcliffe2020_sonode,
   title={On Second Order Behaviour in Augmented Neural ODEs},
   author={Alexander Norcliffe and Cristian Bodnar and Ben Day and Nikola Simidjievski and Pietro Li{\`o}},
-  journal={arXiv preprint arXiv:2006.07220},
+  booktitle = {Advances in Neural Information Processing Systems},
   year={2020}
 }
 ```
