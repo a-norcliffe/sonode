@@ -119,17 +119,18 @@ if __name__ == '__main__':
    # making sampled data to fit
     x_ = x(samp_ts)
     y_ = y(samp_ts)
+    samp_ts = torch.linspace(t0, tN, args.ntimestamps).float().to(device)
        
     z = torch.cat((x_, y_), dim=1).float().to(device)
     z0 = z[0].float().to(device)
     
-    aug = torch.tensor([A_bar[0],A_bar[1]])
-    z0 = torch.cat((z0, aug))
+    aug = torch.tensor([A_bar[0], A_bar[1]])
+    z0 = torch.cat((z0, aug)).float()
     
     nhidden = 20
     
     ids = torch.arange(data_dim)
-    ids = ids.repeat(args.ntimestamps, 1).long()
+    ids = ids.repeat(args.ntimestamps, 1).long().to(device)
     
     feature_layers = [ODEBlock(ODEfunc(dim, nhidden), samp_ts, ids)]
     model = nn.Sequential(*feature_layers).to(device)
@@ -165,7 +166,7 @@ if __name__ == '__main__':
     end_time = time.time()
     print('\n')
     print('Training complete after {} iterations.'.format(itr))
-    loss = loss.detach().numpy()
+    loss = loss.cpu().detach().numpy()
     print('Train MSE = ' +str(loss))
     print('NFE = ' +str(feature_layers[0].nfe))
     print('Total time = '+str(end_time-start_time))
