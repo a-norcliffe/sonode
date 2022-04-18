@@ -12,6 +12,7 @@ Official code for the paper [**On Second Order Behaviour in Augmented Neural ODE
   
  ![NODE vs ANODE vs SONODE on the nested spheres problem](figures/nested_gif.gif)
 
+**Please note:** This is research code which is no longer maintained, there may be new issues. I plan to update it to be easier to run in June 2022.
 
 ## Abstract 
 
