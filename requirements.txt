@@ -3,6 +3,6 @@ numexpr==2.6.8
 numpy==1.15.4
 pandas==0.23.4
 parso==0.3.1
-scipy==1.1.0
+scipy==1.10.0
 seaborn==0.9.0
 torchdiffeq==0.0.1
